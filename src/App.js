@@ -3,16 +3,17 @@ import './App.css';
 
 
 function Button(props){
-return <button onClick={()=> props.incrementFunction(incrementValue)}>+{props.incrementValue}</button>
+  const handleIncrement = ()=> props.incrementFunction(props.incrementValue);
+  return <button onClick={handleIncrement}>+{props.incrementValue}</button>
 }
 
 function Display(props){
-return <div>{props.message}</div>
+  return <div>{props.message}</div>
 }
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const handleClick =() =>setCounter(counter+1);
+  const handleClick =(incrementValue) =>setCounter(counter+incrementValue);
 
 
   return (
